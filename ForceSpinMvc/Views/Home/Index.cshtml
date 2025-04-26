@@ -1,0 +1,62 @@
+﻿@model ICollection<ForceSpinMvc.Models.Message>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p style="font-size: 30px;">
+        This web app created by <a href="https://www.linkedin.com/in/okant60/">Okan Topdemir</a>.
+    </p>
+    <img height="400" src="https://res.cloudinary.com/davayayg8/image/upload/v1744876863/EruKampusSporProfilPhotos/iujltdb5fulsu6fajeht.jpg" alt="Alternate Text" />
+</div>
+
+<!-- Formu sola hizalı yapıyoruz -->
+<div class="d-flex justify-content-center mt-4">
+    <div class="text-left" style="max-width: 500px;">
+        <form method="post" asp-action="SendMessage">
+            <div class="form-group">
+                <label for="Title">Title</label>
+                <input name="Title" id="Title" class="form-control" placeholder="Enter message title" />
+            </div>
+            <div class="form-group mt-3">
+                <label for="Body">Body</label>
+                <textarea name="Body" id="Body" class="form-control" placeholder="Enter message body"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Send Message</button>
+        </form>
+        <!-- Mesaj başarıyla gönderildiyse kullanıcıya bildirim -->
+        @if (TempData["MessageSent"] != null)
+        {
+            <div class="alert alert-success mt-3">
+                @TempData["MessageSent"]
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Tabloyu sağa hizalı yapıyoruz -->
+<div class="d-flex justify-content-center mt-5">
+    <div style="max-width: 800px;">
+        <h3>Geçmiş Mesajlar</h3>
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Başlık</th>
+                    <th>İçerik</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var message in Model)
+                {
+                    <tr>
+                        <td>@message.Id</td>
+                        <td>@message.Title</td>
+                        <td>@message.Body</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
