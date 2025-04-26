@@ -4,9 +4,9 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Welcome!</h1>
     <p style="font-size: 30px;">
-        This web app created by <a href="https://www.linkedin.com/in/okant60/">Okan Topdemir</a>.
+        This web app is created by <a href="https://www.linkedin.com/in/okant60/">Okan Topdemir</a>.
     </p>
     <img height="400" src="https://res.cloudinary.com/davayayg8/image/upload/v1744876863/EruKampusSporProfilPhotos/iujltdb5fulsu6fajeht.jpg" alt="Alternate Text" />
 </div>
@@ -16,12 +16,13 @@
     <div class="text-left" style="max-width: 500px;">
         <form method="post" asp-action="SendMessage">
             <div class="form-group">
+                <h2>Send a Message to The World!</h2>
                 <label for="Title">Title</label>
-                <input name="Title" id="Title" class="form-control" placeholder="Enter message title" />
+                <input required name="Title" id="Title" class="form-control" placeholder="Enter message title" />
             </div>
             <div class="form-group mt-3">
                 <label for="Body">Body</label>
-                <textarea name="Body" id="Body" class="form-control" placeholder="Enter message body"></textarea>
+                <textarea required name="Body" id="Body" class="form-control" placeholder="Enter message body"></textarea>
             </div>
             <button type="submit" class="btn btn-primary mt-3">Send Message</button>
         </form>
