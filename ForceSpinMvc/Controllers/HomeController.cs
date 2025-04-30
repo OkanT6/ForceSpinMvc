@@ -19,7 +19,7 @@ namespace ForceSpinMvc.Controllers
 
         public IActionResult Index()
         {
-            ICollection<Message> messages = _context.Messages.OrderBy(m => m.Id).ToList();
+            ICollection<Message> messages = _context.Messages.OrderByDescending(m => m.Id).ToList();
 
             return View(messages);
         }
