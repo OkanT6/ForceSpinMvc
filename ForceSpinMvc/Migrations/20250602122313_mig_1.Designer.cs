@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ForceSpinMvc.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250426123913_mig_1")]
+    [Migration("20250602122313_mig_1")]
     partial class mig_1
     {
         /// <inheritdoc />
